@@ -1,0 +1,343 @@
+/* === Base Styles === */
+.home-page {
+  font-family: 'Segoe UI', sans-serif;
+  color: #1f2d3d;
+  background-color: #ffffff;
+  animation: pageFadeIn 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Global Reusable Fade Animation for Elements === */
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-delay-1 { animation-delay: 0.2s; }
+.fade-delay-2 { animation-delay: 0.4s; }
+.fade-delay-3 { animation-delay: 0.6s; }
+.fade-delay-4 { animation-delay: 0.8s; }
+
+/* === Hero Section === */
+.hero-section {
+  background: url('https://png.pngtree.com/background/20250105/original/pngtree-programming-code-software-development-abstract-technology-background-picture-image_15178820.jpg') no-repeat center center/cover;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  animation: heroFadeIn 1.2s ease-in-out forwards;
+
+}
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.hero-card {
+  background-color: rgba(0, 0, 50, 0.6);
+  padding: 40px;
+  border-radius: 15px;
+  display: inline-block;
+  max-width: 800px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.highlight {
+  color: #ffc107;
+}
+
+.btn-dark {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #0056b3;
+}
+
+/* === Sections === */
+.how-it-works,
+.security-section,
+.faq-section,
+.testimonials-section,
+.cta-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title,
+.team-title,
+.metrics-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #062a49;
+}
+.metrics-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ccd8e2;
+}
+
+  
+
+/* === Steps === */
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background-color: #e7f0fd;
+  border-left: 5px solid #007bff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* === Team Section === */
+.team-section {
+  background-color: #f8faff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-card {
+  background: #f0f8ff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  max-width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 100, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: popIn 0.6s ease forwards;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #003566;
+}
+
+.team-card .role {
+  font-weight: bold;
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.team-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* === Metrics Section === */
+.metrics-section {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.metrics-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.metric-box {
+  background-color: #003c80;
+  border-radius: 12px;
+  padding: 30px 20px;
+  flex: 1 1 200px;
+  max-width: 220px;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.metric-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #00cfff;
+}
+
+.metric-box p {
+  font-size: 1rem;
+  margin: 0;
+  color: #f0f0f0;
+}
+
+/* === Security Section === */
+.security-section {
+  background-color: #e6f0ff;
+  color: #003566;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.security-section .section-title {
+  color: #003566;
+}
+
+.security-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.security-card {
+  background: #ffffff;
+  border-left: 5px solid #007bff;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 100, 0.1);
+  max-width: 300px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.security-card h4 {
+  color: #003c80;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.security-card p {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* === Testimonials === */
+.testimonials-section .testimonial {
+  background-color: #e3f2fd;
+  padding: 20px;
+  margin: 15px auto;
+  border-left: 5px solid #007bff;
+  max-width: 600px;
+  font-style: italic;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* === Call To Action === */
+.cta-section {
+  background-color: #003566;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* === FAQ Section === */
+.faq-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  transition: all 0.3s ease-in-out;
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #003566;
+  font-weight: 500;
+}
+
+.faq-icon {
+  font-size: 1rem;
+  color: #007bff;
+}
+
+.faq-answer {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #444;
+  padding-left: 5px;
+  animation: fadeInUp 0.3s ease-in-out;
+}
+
+.faq-question:hover h4 {
+  color: #0056b3;
+}
+
+/* === Extra Animations === */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

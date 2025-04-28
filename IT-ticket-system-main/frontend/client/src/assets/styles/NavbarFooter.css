@@ -1,0 +1,357 @@
+/* === General Navbar Styles === */
+.navbar {
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.5rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+/* === Brand Section === */
+.navbar-left .navbar-brand {
+  display: flex;
+  margin-left: 0px;
+  /* align-items: center; */
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  margin-left: -545px;
+}
+
+.brand-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #061569;
+  white-space: nowrap;
+}
+
+/* === Nav Links === */
+.navbar-right {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.nav-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0b0466;
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 6px 10px;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: #084298;
+  text-decoration: underline;
+}
+
+/* === User Section === */
+.user-section {
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+}
+
+
+.user-dropdown {
+  position: relative;
+}
+
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0b0466;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: none;
+  min-width: 160px;
+  z-index: 10;
+  text-align: left;
+}
+
+.user-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  color: #0b0466;
+  text-decoration: none;
+  background: white;
+  transition: background-color 0.2s;
+  justify-content: flex-start;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.logout {
+  color: #dc3545;
+}
+
+/* === Auth Buttons === */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.auth-buttons .btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-outline-primary {
+  color: #061569;
+  background-color: transparent;
+  border: 1px solid #061569;
+}
+
+.btn-outline-primary:hover {
+  color: white;
+  background-color: #061569;
+}
+
+.btn-primary {
+  background-color: #061569;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #042453;
+}
+
+/* === Mobile Menu Toggle === */
+.navbar-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #061569;
+  cursor: pointer;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar-right {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    display: none;
+    margin-top: 1rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+  }
+
+  .navbar-right.active {
+    display: flex;
+  }
+
+  .main-nav,
+  .user-section,
+  .auth-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    gap: 10px;
+  }
+
+  .auth-buttons .btn {
+    width: auto;
+  }
+
+  .navbar-toggle {
+    display: block;
+    align-self: flex-end;
+  }
+}
+/* === Footer Styles === */
+/* === Footer Styles === */
+.footer {
+  background-color: #003566;
+  padding: 2rem 1.5rem;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* === Top Section === */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* === Brand === */
+.footer-brand {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+  color: #00cfff;
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: #cce5ff;
+  margin-top: 0.25rem;
+}
+
+/* === Links === */
+.footer-links {
+  flex: 2 1 500px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link-group h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00cfff;
+  margin-bottom: 6px;
+}
+
+.link-group a {
+  color: #e6f0ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.link-group a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* === Bottom Section === */
+.footer-bottom {
+  border-top: 1px solid #0056b3;
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #cce5ff;
+}
+
+/* === Social Icons === */
+.social-links a {
+  margin-left: 12px;
+  font-size: 1.2rem;
+  color: #e6f0ff;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #00cfff;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .social-links a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}

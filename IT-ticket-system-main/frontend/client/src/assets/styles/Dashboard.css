@@ -1,0 +1,152 @@
+.tickets-page {
+  padding-top: 80px;
+  padding-bottom: 3rem;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+.ticket-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.ticket-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Priority badge styles */
+.priority-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.priority-badge.low {
+  background-color: #38b2ac;
+}
+
+.priority-badge.medium {
+  background-color: #f6ad55;
+}
+
+.priority-badge.high {
+  background-color: #e53e3e;
+}
+
+/* Status badge styles */
+.status-badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+.status-badge.open {
+  background-color: #3182ce;
+}
+
+.status-badge.in-progress,
+.status-badge.in_progress {
+  background-color: #f6ad55;
+}
+
+.status-badge.closed {
+  background-color: #48bb78;
+}
+
+.filter-dropdown {
+  min-width: 180px;
+}
+
+.create-btn {
+  background-color: #4299e1;
+  color: #fff;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 700;
+}
+
+.create-btn:hover {
+  background-color: #fff;
+  color: #4299e1;
+  border: 1px solid #4299e1;
+}
+
+/* Edit button inside ticket */
+.ticket-card .btn-primary {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.ticket-card .btn-primary:hover {
+  background-color: #2b6cb0;
+}
+
+/* Empty state */
+.empty-state {
+  background: #f4f6f8;
+  border-radius: 1rem;
+  padding: 2rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+/* Empty state image */
+.empty-state img {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+/* Modal customization */
+.modal-content {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: none;
+  background: #f9fafc;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.modal-title {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.modal-body p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
