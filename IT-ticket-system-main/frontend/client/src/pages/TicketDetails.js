@@ -12,44 +12,46 @@ const TicketDetails = () => {
   const [newComment, setNewComment] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
-  // Fetch ticket details and comments when ticketId changes
+  // Fetch ticket and comments when ticketId changes
   useEffect(() => {
     const fetchTicketData = async () => {
-      setIsLoading(true);  // Start loading state
+      setIsLoading(true);
+
+      // 🧹 Clear previous ticket and comment data
+      setTicket(null);
+      setComments([]);
 
       try {
         // Fetch ticket details
         const ticketResponse = await axios.get(`/tickets/${ticketId}`);
-        setTicket(ticketResponse.data);  // Set ticket data
+        setTicket(ticketResponse.data);
 
-        // Fetch comments for the specific ticket
+        // Fetch comments
         const commentsResponse = await axios.get(`/tickets/${ticketId}/comments`);
-        setComments(commentsResponse.data);  // Set comments data
-
+        setComments(commentsResponse.data);
       } catch (error) {
         console.error('Error fetching ticket data:', error);
-        setIsLoading(false);
       }
-      
-      setIsLoading(false);  // Stop loading state after data is fetched
+
+      setIsLoading(false);
     };
 
     fetchTicketData();
-  }, [ticketId]);  // The hook runs every time ticketId changes
+  }, [ticketId]);
 
-  // Handle adding new comment
+  // Handle new comment
   const handleAddComment = () => {
-    if (!newComment.trim()) return;  // Avoid submitting empty comments
+    if (!newComment.trim()) return;
 
     axios.post(`/tickets/${ticketId}/comments`, { message: newComment })
       .then(response => {
-        setComments(prev => [...prev, response.data]);  // Add the new comment to state
-        setNewComment('');  // Reset input field
+        setComments(prev => [...prev, response.data]);
+        setNewComment('');
       })
       .catch(error => console.error('Error adding comment:', error));
   };
 
-  // Loading state or ticket not found
+  // Loading or ticket not found
   if (isLoading) return <div>Loading...</div>;
   if (!ticket) return <div>Ticket not found.</div>;
 
@@ -69,12 +71,12 @@ const TicketDetails = () => {
         {comments.length === 0 
           ? <p>No comments yet.</p>
           : comments.map(c => (
-              <div key={c.id} className={`comment ${c.role}`}>
-                <p>
-                  <strong>{c.role === 'admin' ? 'Admin' : 'User'}:</strong> {c.message}
-                </p>
-                <small>{new Date(c.timestamp || c.created_at).toLocaleString()}</small>
-              </div>
+            <div key={c.id} className={`comment ${c.role}`}>
+            <p>
+              <strong>{c.author}:</strong> {c.message}
+            </p>
+            <small>{new Date(c.timestamp || c.created_at).toLocaleString()}</small>
+          </div>
             ))
         }
       </div>
@@ -87,7 +89,7 @@ const TicketDetails = () => {
         />
         <button onClick={handleAddComment}>Submit</button>
       </div>
-    </div>
+    </div> 
   );
 };
 

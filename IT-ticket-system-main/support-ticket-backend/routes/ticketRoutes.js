@@ -109,6 +109,28 @@ router.get(
   }
 );
 
+// Route to delete a ticket and its comments
+router.delete('/:id', authenticateToken, async (req, res) => {
+  const ticketId = req.params.id;
+
+  try {
+    // Delete comments related to ticket
+    await db.promise().query('DELETE FROM comments WHERE ticket_id = ?', [ticketId]);
+
+    // Delete ticket
+    const [result] = await db.promise().query('DELETE FROM tickets WHERE id = ?', [ticketId]);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: 'Ticket not found' });
+    }
+
+    res.json({ message: 'Ticket and associated comments deleted successfully' });
+  } catch (err) {
+    console.error('Error deleting ticket:', err);
+    res.status(500).json({ error: 'Failed to delete ticket' });
+  }
+});
+
 // Comment routes (conversation history)
 router.get('/:id/comments', authenticateToken, getComments);
 router.post('/:id/comments', authenticateToken, addComment);
