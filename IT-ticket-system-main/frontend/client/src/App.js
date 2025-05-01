@@ -23,6 +23,7 @@ import HowItWorks from "./pages/HowItWorks";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import TicketDetails from "./pages/TicketDetails";
+import AgentTicketDetails from "./pages/AgentTicketDetails";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           }
         />
         <Route path="/agent-panel" element={<AgentPanel />} />
+        <Route path="/agentticketdetails/:ticketId" element={<AgentTicketDetails />} />
         <Route
           path="/solved-tickets"
           element={

@@ -1,5 +1,3 @@
-// src/pages/MyTickets.js
-
 import React, { useEffect, useState } from "react";
 import axios from "../axiosConfig";
 import {jwtDecode }from "jwt-decode";

@@ -1,78 +1,107 @@
-.ticket-details {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+.ticket-details-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.ticket-details-left {
+  flex: 2;
+}
+
+.ticket-details-right {
+  flex: 1;
+  border-left: 2px solid #f0f0f0;
+  padding-left: 1.5rem;
 }
 
 .back-btn {
-  margin-bottom: 20px;
-  background-color: #eee;
+  background: transparent;
   border: none;
-  padding: 8px 12px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
 
 .comments {
-  margin: 20px 0;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1rem;
 }
 
-.comment {
-  max-width: 70%;
-  padding: 12px 16px;
-  border-radius: 18px;
+.comment-bubble {
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 80%;
   position: relative;
-  font-size: 15px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-.comment.user {
+.comment-bubble.user {
+  background-color: #dae4f6;
   align-self: flex-start;
-  background-color: #e0f7fa;
-  border-top-left-radius: 0;
 }
 
-.comment.admin {
+.comment-bubble.admin {
+  background-color: #f6f0ff;
   align-self: flex-end;
-  background-color: #dcedc8;
-  border-top-right-radius: 0;
 }
 
-.comment p {
+.comment-bubble p {
   margin: 0;
+  color: #333;
 }
 
-.comment small {
+.comment-bubble small {
   display: block;
-  margin-top: 5px;
-  font-size: 12px;
-  color: #666;
-  text-align: right;
+  margin-top: 0.5rem;
+  color: #888;
+  font-size: 0.75rem;
 }
 
 .add-comment {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .add-comment textarea {
-  padding: 10px;
-  font-size: 14px;
-  min-height: 80px;
-  resize: vertical;
-  border: 1px solid #ccc;
+  width: 100%;
+  height: 80px;
+  padding: 0.75rem;
   border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
 }
 
 .add-comment button {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #007bff;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #6c63ff;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
+}
+
+.ticket-details-right h4 {
+  margin-bottom: 1rem;
+}
+
+.info-box {
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.status-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.status-tag.closed {
+  background-color: #e0f7e9;
+  color: #2e7d32;
 }

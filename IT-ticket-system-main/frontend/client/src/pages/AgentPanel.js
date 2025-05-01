@@ -164,7 +164,7 @@ const AgentPanel = () => {
                     </option>
                   ))}
                 </select>
-                <button onClick={() => navigate(`/ticket/${ticket.id}`)}>
+                <button onClick={() => navigate(`/agentticketdetails/${ticket.id}`)}>
                   View Details
                 </button>
               </div>
